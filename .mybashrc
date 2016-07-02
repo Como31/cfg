@@ -1,0 +1,47 @@
+#!/bin/bash
+
+if [ "$PS1" ]
+then
+	complete -cf sudo
+fi
+
+export GOPATH="/home/${USER}/.go"
+
+source ~/.local/lib/colorsrc
+
+user="$EBCYAN\u$EWHITE"
+date="\[\033[38;5;38m\]\D{%a %d %b %Y}$EWHITE"
+time="$EBBLUE\t$EWHITE"
+path="$EBLUE\w$EWHITE"
+
+infos="$user | $date | $time | $path"
+
+export PS1="\n[$infos]\n $EBGREEN\$ $EWHITE"
+
+alias ls="ls --color --group-directories-first -h"
+alias tree="tree -C"
+
+alias man="man -P less"
+alias eman="man -Hchromium"
+
+alias netre="sudo systemctl restart NetworkManager"
+
+alias star='telnet towel.blinkenlights.nl'
+
+alias xx='clear; curl -4 http://wttr.in/Lyon; sleep 3; xlock -mode blank -geometry 1x1'
+
+alias pp='upower -d | grep "percentage"'
+
+alias redshift='redshift -o -l 45:5 -t 5000:4000'
+alias unredshift='redshift -o -O 6400'
+
+alias lyon='curl -4 http://wttr.in/Lyon'
+alias mions='curl -4 http://wttr.in/Mions'
+alias toulouse='curl -4 http://wttr.in/Toulouse'
+alias moon='curl -4 http://wttr.in/Moon'
+
+alias mr_clean='find . \( -name "*~" -or -name "#*#" \) -delete'
+
+# Remove Ctrl-S terminal handling
+stty -ixon
+
