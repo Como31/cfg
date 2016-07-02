@@ -24,8 +24,6 @@ alias tree="tree -C"
 alias man="man -P less"
 alias eman="man -Hchromium"
 
-alias netre="sudo systemctl restart NetworkManager"
-
 alias star='telnet towel.blinkenlights.nl'
 
 alias xx='clear; curl -4 http://wttr.in/Lyon; sleep 3; xlock -mode blank -geometry 1x1'
